@@ -5,4 +5,10 @@ Github API Request Form
   <%= text_field_tag :owner %><br>
   <%= label_tag :repo %><br>
   <%= text_field_tag :repo %><br>
+  <%= label_tag :event_type %><br>
+  <%= select_tag "event_type", options_for_select([["CreateEvent", "CreateEvent"], ["CommitCommentEvent", "CommitCommentEvent"], ["DeleteEvent", "DeleteEvent"],
+  ["ForkEvent", "ForkEvent"], ["GollumEvent", "GollumEvent"], ["IssueCommentEvent", "IssueCommentEvent"], ["IssuesEvent", "IssuesEvent"],
+  ["MemberEvent", "MemberEvent"], ["PublicEvent", "PublicEvent"], ["PullRequestEvent", "PullRequestEvent"],
+  ["PullRequestReviewCommentEvent", "PullRequestReviewCommentEvent"], ["PushEvent", "PushEvent"],["ReleaseEvent", "ReleaseEvent"],
+  ["SponsorshipEvent","SponsorshipEvent"], ["WatchEvent","WatchEvent"]]) %><br>
   <%= submit_tag "Submit" %>

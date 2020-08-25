@@ -10,9 +10,10 @@ class EventsController < ApplicationController
       repo =  event_params["repo"]
       uri = URI("https://api.github.com/repos/#{owner}/#{repo}/events")
       response = JSON.parse(Net::HTTP.get(uri))
+      render json: response, status: 200
     end
 
     def event_params
-      params.permit(:owner, :repo)
+      params.permit(:owner, :repo, :event_type)
     end
 end
