@@ -12,6 +12,7 @@ class EventsController < ApplicationController
       uri = URI("https://api.github.com/repos/#{owner}/#{repo}/events")
       response = JSON.parse(Net::HTTP.get(uri))
       response = response.select{|item| item["type"] == event_type }
+      response = response.map { |item| item.slice("type", "actor", "created_at") }
       render json: response, status: 200
     end
 
