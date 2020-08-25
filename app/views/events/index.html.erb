@@ -1,1 +1,8 @@
-Hello world
+Github API Request Form
+
+<%= form_tag "/events", method: "post" %>
+  <%= label_tag :owner %><br>
+  <%= text_field_tag :owner %><br>
+  <%= label_tag :repo %><br>
+  <%= text_field_tag :repo %><br>
+  <%= submit_tag "Submit" %>
